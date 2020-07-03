@@ -5,6 +5,7 @@ import (
 	"github.com/micro/go-micro/v2/logger"
 	"github.com/opentracing/opentracing-go"
 	conf "go-common/app/service/store/config"
+	"go-common/app/service/test/api"
 	"go-common/app/service/test/internal/di"
 	"go-common/app/service/test/internal/microservice"
 	"go-common/library/net/rpc"
@@ -18,7 +19,7 @@ func main() {
 	microService := microservice.InitMicroService()
 
 	// 链路追踪 start
-	t, closer, err := trace.NewJaegerTracer("go.micro.srv.greeterbo", conf.GetJaeger())
+	t, closer, err := trace.NewJaegerTracer(api.AppID, conf.GetJaeger())
 	if err != nil {
 		logger.Fatalf("opentracing tracer create error:%v", err)
 	}
