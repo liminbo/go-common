@@ -21,3 +21,7 @@
 cd /cmd && go build main.go
 
 启动 ./main
+
+测试
+cd /test && go build test.go
+./test
