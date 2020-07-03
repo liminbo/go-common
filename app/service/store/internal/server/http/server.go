@@ -3,6 +3,7 @@ package http
 import (
 	"github.com/micro/go-micro/v2/logger"
 	"github.com/micro/go-micro/v2/web"
+	"go-common/app/service/store/api"
 	"go-common/app/service/store/internal/service"
 	"net/http/pprof"
 	"sync"
@@ -13,7 +14,7 @@ var svr *service.Service
 // New new a bm server.
 func New(s *service.Service, waiter *sync.WaitGroup) (err error) {
 	service := web.NewService(
-		web.Name("go.micro.web.greeter"),
+		web.Name(api.WebAppID),
 	)
 
 	service.HandleFunc("/", pprof.Index)

@@ -142,6 +142,7 @@ github.com/mailru/easyjson/buffer
 github.com/mailru/easyjson/jlexer
 github.com/mailru/easyjson/jwriter
 # github.com/micro/cli/v2 v2.1.2
+## explicit
 github.com/micro/cli/v2
 # github.com/micro/go-micro/v2 v2.9.0
 ## explicit
@@ -256,7 +257,6 @@ github.com/micro/go-micro/v2/util/wrapper
 github.com/micro/go-micro/v2/web
 # github.com/micro/go-plugins/logger/zap/v2 v2.8.0
 ## explicit
-github.com/micro/go-plugins/logger/zap/v2
 # github.com/micro/go-plugins/registry/etcdv3/v2 v2.8.0
 ## explicit
 github.com/micro/go-plugins/registry/etcdv3/v2

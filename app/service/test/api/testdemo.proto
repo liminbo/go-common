@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+service TestDemo {
+	rpc TestHello(TestRequest) returns (TestResponse) {}
+}
+
+message TestRequest {
+	string name = 1;
+}
+
+message TestResponse {
+	string greeting = 1;
+}

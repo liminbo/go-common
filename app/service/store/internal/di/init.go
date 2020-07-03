@@ -2,6 +2,7 @@ package di
 
 import (
 	"go-common/app/service/store/internal/dao"
+	"go-common/app/service/store/internal/microservice"
 	"go-common/app/service/store/internal/server/grpc"
 	"go-common/app/service/store/internal/server/http"
 	"go-common/app/service/store/internal/service"
@@ -16,7 +17,6 @@ func InitApp() (*App, func(), error) {
 	if err != nil {
 		return nil, nil, err
 	}
-
 
 	daoDao, closeDao, err := dao.New(db)
 	if err != nil {
@@ -36,7 +36,7 @@ func InitApp() (*App, func(), error) {
 		closeDB()
 		return nil, nil, err
 	}
-	err = grpc.New(serviceService, &Waiter)
+	err = grpc.New(microservice.MicroService, serviceService, &Waiter)
 	if err != nil {
 		closeService()
 		closeDao()
