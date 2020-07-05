@@ -1,5 +1,8 @@
 syntax = "proto3";
 
+// 定义包名
+option go_package = "../api";
+
 service TestDemo {
 	rpc TestHello(TestRequest) returns (TestResponse) {}
 }
